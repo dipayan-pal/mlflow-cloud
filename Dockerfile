@@ -1,6 +1,6 @@
 FROM python:3.11-slim
 
-RUN pip install "mlflow[auth]" psycopg2-binary
+RUN pip install --no-cache-dir "mlflow-skinny[auth]" psycopg2-binary
 
 EXPOSE 5000
 
