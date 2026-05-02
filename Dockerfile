@@ -1,6 +1,6 @@
 FROM python:3.11-slim
 
-RUN pip install mlflow psycopg2-binary boto3
+RUN pip install "mlflow[auth]" psycopg2-binary
 
 EXPOSE 5000
 
