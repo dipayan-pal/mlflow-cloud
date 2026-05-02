@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: mlflow-server
+    runtime: docker
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: mlflow-db
+          property: connectionString
+      - key: ARTIFACT_ROOT
+        value: /tmp/mlflow-artifacts
+
+databases:
+  - name: mlflow-db
+    plan: free
